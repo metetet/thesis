@@ -56,3 +56,6 @@ print(f"Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {faces_met
 
 art_metrics = evaluate_model(art_paths, art_labels)
 print(f"Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {art_metrics}")
+
+# Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.596875, 0.6124818577648766, 0.5275, 0.5668233713901947, 0.5968749999999999)
+# Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.64125, 0.6782334384858044, 0.5375, 0.5997210599721061, 0.6412500000000001)
