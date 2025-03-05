@@ -1,5 +1,5 @@
 # https://huggingface.co/Nahrawy/AIorNot
-# THIS IS A TEST FILE (THE MODEL WAS TRAINED ON THE ART DATASET!)
+# THE MODEL WAS TRAINED ON THE ART DATASET!
 # The code below evaluates the model on the faces and art datasets
 
 # import libraries
