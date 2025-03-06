@@ -31,6 +31,7 @@ def get_image_paths(dataset_path):
 # Evaluate the model on the dataset
 def evaluate_model(image_paths, true_labels, batch_size=32):
     preds = []
+    
     for i in range(0, len(image_paths), batch_size):
         batch_images = [Image.open(path) for path in image_paths[i:i + batch_size]]
         predictions = classifier(batch_images)
