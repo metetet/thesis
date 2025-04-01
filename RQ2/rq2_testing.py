@@ -10,7 +10,7 @@ import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load model
-classifier = pipeline("image-classification", model="./sdxl-fine-tune-art", device=0 if torch.cuda.is_available() else -1)
+classifier = pipeline("image-classification", model="./sdxl-fine-tune-mixed", device=0 if torch.cuda.is_available() else -1)
 
 # Load data
 art_dataset_path = 'archive/datasets/art_512x512'
@@ -63,3 +63,7 @@ print(f"Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {art_metrics
 # Fine-Tuned on Art Dataset (sdxl-fine-tune-art)
 # Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.421875, 0.36323851203501095, 0.2075, 0.26412092283214, 0.42187499999999994)
 # Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.9575, 0.9815789473684211, 0.9325, 0.9564102564102565, 0.9575)
+
+# Fine-Tuned on Mixed Dataset (sdxl-fine-tune-mixed)
+# Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.943125, 0.9265944645006017, 0.9625, 0.944206008583691, np.float64(0.943125))
+# Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.959375, 0.9476248477466505, 0.9725, 0.9599012954966071, np.float64(0.9593750000000001))
