@@ -61,8 +61,8 @@ print(f"Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {art_metrics
 # Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.1875, 0.043795620437956206, 0.03, 0.03560830860534125, 0.1875)
 
 # Fine-Tuned on Art Dataset (sdxl-fine-tune-art)
-# Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.421875, 0.36323851203501095, 0.2075, 0.26412092283214, 0.42187499999999994)
-# Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.9575, 0.9815789473684211, 0.9325, 0.9564102564102565, 0.9575)
+# Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.3875, 0.3899755501222494, 0.39875, 0.3943139678615575, np.float64(0.3875))
+# Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.964375, 0.9449101796407186, 0.98625, 0.9651376146788991, np.float64(0.9643750000000001))
 
 # Fine-Tuned on Mixed Dataset (sdxl-fine-tune-mixed)
 # Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.943125, 0.9265944645006017, 0.9625, 0.944206008583691, np.float64(0.943125))

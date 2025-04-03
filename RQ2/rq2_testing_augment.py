@@ -101,5 +101,5 @@ print(f"Augmented Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {a
 # Augmented Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.335625, 0.041811846689895474, 0.015, 0.02207911683532659, np.float64(0.33562499999999995))
 
 # Fine-Tuned on Art Dataset (sdxl-fine-tune-art) on augmented datasets
-# Augmented Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.403125, 0.41223103057757643, 0.455, 0.4325609031491384, np.float64(0.40312499999999996))
-# Augmented Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.95125, 0.9287410926365796, 0.9775, 0.9524969549330086, np.float64(0.9512500000000002))
+# Augmented Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.4075, 0.4155251141552511, 0.455, 0.4343675417661098, np.float64(0.40750000000000003))
+# Augmented Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.9525, 0.9289099526066351, 0.98, 0.9537712895377128, np.float64(0.9525))
