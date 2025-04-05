@@ -1,4 +1,4 @@
-# The code below evaluates the fine-tuned model on the faces and art datasets
+# The code below evaluates the fine-tuned model on the randomly augmented faces and art datasets
 
 from transformers import pipeline
 from PIL import Image, ImageOps
