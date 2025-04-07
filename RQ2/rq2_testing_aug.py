@@ -12,7 +12,7 @@ import random
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load model
-classifier = pipeline("image-classification", model="./sdxl-fine-tune-art", device=0 if torch.cuda.is_available() else -1)
+classifier = pipeline("image-classification", model="./sdxl-fine-tune", device=0 if torch.cuda.is_available() else -1)
 
 # Load data
 art_dataset_path = 'archive/datasets/art_512x512'
@@ -96,10 +96,10 @@ print(f"Augmented Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): 
 art_metrics = evaluate_model(art_paths, art_labels)
 print(f"Augmented Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {art_metrics}")
 
-# Fine-Tuned on Human Dataset (sdxl-fine-tune) on augmented datasets
+# Fine-Tuned on Human Dataset (sdxl-fine-tune) and tested on augmented datasets
 # Augmented Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.83625, 0.9803571428571428, 0.68625, 0.8073529411764706, np.float64(0.8362499999999999))
 # Augmented Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.335625, 0.041811846689895474, 0.015, 0.02207911683532659, np.float64(0.33562499999999995))
 
-# Fine-Tuned on Art Dataset (sdxl-fine-tune-art) on augmented datasets
+# Fine-Tuned on Art Dataset (sdxl-fine-tune-art) and tested on augmented datasets
 # Augmented Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.4075, 0.4155251141552511, 0.455, 0.4343675417661098, np.float64(0.40750000000000003))
 # Augmented Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.9525, 0.9289099526066351, 0.98, 0.9537712895377128, np.float64(0.9525))
