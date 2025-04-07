@@ -3,6 +3,8 @@
 from PIL import Image, ImageOps
 from torchvision import transforms
 import random
+import os
+from shutil import copy2
 
 # Load data
 faces_dataset_path = 'archive/datasets/faces_512x512'
@@ -12,13 +14,13 @@ def augment_image(image):
     transform_list = []
 
     if random.random() < 0.95:
-        transform_list.append(transforms.RandomResizedCrop(size=(512, 512), scale=(0.8, 1.0)))
-    if random.random() < 0.95:
+        transform_list.append(transforms.RandomResizedCrop(size=(512, 512), scale=(0.4, 1.0)))
+    if random.random() < 0.30: # keep this lower than the others to avoid too many inverted samples
         transform_list.append("invert")
     if random.random() < 0.95:
         transform_list.append("shift")
     if random.random() < 0.95:
-        transform_list.append(transforms.RandomRotation(degrees=15))
+        transform_list.append(transforms.RandomRotation(degrees=25))
     if random.random() < 0.95:
         transform_list.append(transforms.RandomHorizontalFlip())
     if random.random() < 0.95:
@@ -47,4 +49,30 @@ def augment_image(image):
 
 # Function to apply the augmentation to a percentage of images
 def augment_images(dataset_path, percentage, output_path):
-    
+    for split in ["train", "test", "val"]:
+        split_path = os.path.join(dataset_path, split)
+        output_split_path = os.path.join(output_path, split)
+
+        for label in ["0", "1"]:
+            image_path = os.path.join(split_path, label)
+            output_image_path = os.path.join(output_split_path, label)
+            os.makedirs(output_image_path, exist_ok=True)
+
+            set_of_images = os.listdir(image_path)
+            num_images_to_augment = int(len(set_of_images) * percentage) # must be a whole number
+            images_to_augment = set(random.sample(set_of_images, num_images_to_augment))
+
+            for image in set_of_images:
+                src = os.path.join(image_path, image)
+                dst = os.path.join(output_image_path, image)
+
+                if image in images_to_augment:
+                    img = Image.open(src).convert("RGB")
+                    img = augment_image(img)
+                    img.save(dst)
+                else:
+                    copy2(src, dst)
+
+        print(f"Augmented {percentage*100}% of images in {split} split")
+
+augment_images(faces_dataset_path, 0.1, 'archive/datasets/faces_aug10')

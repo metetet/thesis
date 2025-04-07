@@ -33,7 +33,7 @@ def augment_image(image):
     transform_list = []
 
     if random.random() < 0.3: # 30% chance to resize and crop
-        transform_list.append(transforms.RandomResizedCrop(size=(512, 512), scale=(0.8, 1.0)))
+        transform_list.append(transforms.RandomResizedCrop(size=(512, 512), scale=(0.4, 1.0)))
     if random.random() < 0.15: # 15% chance to invert colors
         transform_list.append("invert")
     if random.random() < 0.2: # 20% chance to shift the image
