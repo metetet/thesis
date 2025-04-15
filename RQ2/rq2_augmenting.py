@@ -75,4 +75,4 @@ def augment_images(dataset_path, percentage, output_path):
 
         print(f"Augmented {percentage*100}% of images in {split} split")
 
-augment_images(faces_dataset_path, 0.1, 'archive/datasets/faces_aug10')
+augment_images(faces_dataset_path, 0.05, 'archive/datasets/faces_aug5')
