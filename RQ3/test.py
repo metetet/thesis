@@ -57,7 +57,7 @@ def create_few_shot_set(dataset, set_size, seed):
     })
 
 # Create few-shot datasets
-few_shot_ds = create_few_shot_set(ds, set_size=6400, seed=42)
+few_shot_ds = create_few_shot_set(ds, set_size=50, seed=42)
 print("Few-shot dataset:", few_shot_ds)
 
 # Create custom datasets
@@ -105,6 +105,8 @@ for param in model.parameters():
     param.requires_grad = False
 for param in model.classifier.parameters():
     param.requires_grad = True
+for param in model.swin.encoder.layers[-1].parameters():
+    param.requires_grad = True # unfreeze the last layer of the encoder
 
 # Training arguments - disable pin_memory since we're handling device placement manually
 training_args = TrainingArguments(
