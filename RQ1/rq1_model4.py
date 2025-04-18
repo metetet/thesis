@@ -17,7 +17,6 @@ model = AutoModelForImageClassification.from_pretrained("Nahrawy/AIorNot")
 # CUDA check
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
-model.eval()
 
 # Load data
 art_dataset_path = 'archive/datasets/art_512x512'
