@@ -5,6 +5,12 @@ from torchvision import transforms
 import random
 import os
 from shutil import copy2
+import numpy as np
+
+# Set random seed for reproducibility
+def set_seed(seed):
+    random.seed(seed)
+    np.random.seed(seed)
 
 # Load data
 faces_dataset_path = 'archive/datasets/faces_512x512'
@@ -48,7 +54,8 @@ def augment_image(image):
     return image
 
 # Function to apply the augmentation to a percentage of images
-def augment_images(dataset_path, percentage, output_path):
+def augment_images(dataset_path, percentage, output_path, seed):
+    set_seed(seed)
     for split in ["train", "test", "val"]:
         split_path = os.path.join(dataset_path, split)
         output_split_path = os.path.join(output_path, split)
@@ -75,4 +82,4 @@ def augment_images(dataset_path, percentage, output_path):
 
         print(f"Augmented {percentage*100}% of images in {split} split")
 
-augment_images(faces_dataset_path, 0.05, 'archive/datasets/faces_aug5')
+augment_images(faces_dataset_path, 0.05, 'archive/datasets/faces_aug5', seed=42)
