@@ -10,7 +10,7 @@ import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load model
-classifier = pipeline("image-classification", model="./sdxl-fine-tune_few_shot", device=0 if torch.cuda.is_available() else -1)
+classifier = pipeline("image-classification", model="./sdxl-fine-tune_few_shot_fr", device=0 if torch.cuda.is_available() else -1)
 
 # Load data
 art_dataset_path = 'archive/datasets/art_512x512'
@@ -61,8 +61,8 @@ print(f"Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {art_metrics
 # Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.2225, 0.03164556962025317, 0.01875, 0.02354788069073783, 0.22250000000000003)
 
 # Fine-Tuned on Human Dataset + Few-Shot [50] on Art Dataset with Extra Unfrozen Layer (sdxl-fine-tune_few_shot)
-# Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.985, 0.9862155388471178, 0.98375, 0.9849812265331664, 0.9850000000000001)
-# Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.385625, 0.2, 0.07625, 0.11040723981900452, 0.385625)
+# Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.985625, 0.986232790988736, 0.985, 0.985616010006254, 0.9856249999999999)
+# Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.40625, 0.2564935064935065, 0.09875, 0.14259927797833935, 0.40624999999999994)
 
 # Fine-Tuned on Human Dataset + Few-Shot [6400] on Art Dataset (sdxl-fine-tune_few_shot)
 # Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.490625, 0.4952681388012618, 0.98125, 0.6582809224318658, 0.490625)
