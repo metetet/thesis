@@ -10,11 +10,12 @@ import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load model
-classifier = pipeline("image-classification", model="./sdxl-fine-tune-art_few_shot", device=0 if torch.cuda.is_available() else -1)
+classifier = pipeline("image-classification", model="./sdxl-fine-tune-mixed", device=0 if torch.cuda.is_available() else -1)
 
 # Load data
 art_dataset_path = 'archive/datasets/art_512x512'
 faces_dataset_path = 'archive/datasets/faces_512x512'
+dogs_dataset_path = 'archive/datasets/dogs'
 
 def get_image_paths(dataset_path):
     image_paths = []
@@ -49,9 +50,13 @@ def evaluate_model(image_paths, true_labels, batch_size=32):
 
 faces_paths, faces_labels = get_image_paths(faces_dataset_path)
 art_paths, art_labels = get_image_paths(art_dataset_path)
+dogs_paths, dogs_labels = get_image_paths(dogs_dataset_path)
 
 faces_metrics = evaluate_model(faces_paths, faces_labels)
 print(f"Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {faces_metrics}")
 
 art_metrics = evaluate_model(art_paths, art_labels)
 print(f"Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {art_metrics}")
+
+dogs_metrics = evaluate_model(dogs_paths, dogs_labels)
+print(f"Dogs Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {dogs_metrics}")

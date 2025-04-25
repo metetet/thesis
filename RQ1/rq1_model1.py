@@ -16,6 +16,7 @@ classifier = pipeline("image-classification", model="Organika/sdxl-detector", de
 # Load data
 art_dataset_path = 'archive/datasets/art_512x512'
 faces_dataset_path = 'archive/datasets/faces_512x512'
+dogs_dataset_path = 'archive/datasets/dogs'
 
 def get_image_paths(dataset_path):
     image_paths = []
@@ -50,12 +51,16 @@ def evaluate_model(image_paths, true_labels, batch_size=32):
 
 faces_paths, faces_labels = get_image_paths(faces_dataset_path)
 art_paths, art_labels = get_image_paths(art_dataset_path)
+dogs_paths, dogs_labels = get_image_paths(dogs_dataset_path)
 
 faces_metrics = evaluate_model(faces_paths, faces_labels)
 print(f"Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {faces_metrics}")
 
 art_metrics = evaluate_model(art_paths, art_labels)
 print(f"Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {art_metrics}")
+
+dogs_metrics = evaluate_model(dogs_paths, dogs_labels)
+print(f"Dogs Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {dogs_metrics}")
 
 # Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.565625, 0.5404157043879908, 0.8775, 0.6688899475940924, 0.565625)
 # Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): (0.811875, 0.7988023952095809, 0.83375, 0.8159021406727828, 0.811875)
