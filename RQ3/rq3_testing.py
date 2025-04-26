@@ -1,4 +1,4 @@
-# The code below evaluates the fine-tuned model on the faces and art datasets
+# The code below evaluates the fine-tuned model on the faces, art, and dogs datasets
 
 from transformers import pipeline
 from PIL import Image
@@ -10,7 +10,7 @@ import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load model
-classifier = pipeline("image-classification", model="./sdxl-fine-tune-mixed", device=0 if torch.cuda.is_available() else -1)
+classifier = pipeline("image-classification", model="./sdxl-fine-tune-art", device=0 if torch.cuda.is_available() else -1)
 
 # Load data
 art_dataset_path = 'archive/datasets/art_512x512'
@@ -30,15 +30,20 @@ def get_image_paths(dataset_path):
 # Evaluate the model on the dataset
 def evaluate_model(image_paths, true_labels, batch_size=32):
     preds = []
+    confidences = []
     
     for i in range(0, len(image_paths), batch_size):
         batch_images = [Image.open(path) for path in image_paths[i:i + batch_size]]
         predictions = classifier(batch_images)
     
-        for pred in predictions:
-            #print(pred)
-            pred_class = 1 if pred[0]['label'] == '1' else 0 # labels are 0 and 1 for real and AI respectively (load_dataset() uses folder names)
+        for img_path, pred in zip(image_paths[i:i + batch_size], predictions):
+            pred_class = 1 if pred[0]['label'] == '1' else 0
+            confidence = pred[0]['score']
             preds.append(pred_class)
+            confidences.append(confidence)
+            
+            # adding this line because faces model is really bad at dogs
+            print(f"Image: {img_path} | Predicted Class: {pred_class} | Confidence: {confidence:.4f}")
     
     accuracy = accuracy_score(true_labels, preds)
     precision = precision_score(true_labels, preds)
@@ -48,15 +53,15 @@ def evaluate_model(image_paths, true_labels, batch_size=32):
     
     return accuracy, precision, recall, f1, auc
 
-faces_paths, faces_labels = get_image_paths(faces_dataset_path)
-art_paths, art_labels = get_image_paths(art_dataset_path)
+# faces_paths, faces_labels = get_image_paths(faces_dataset_path)
+# art_paths, art_labels = get_image_paths(art_dataset_path)
 dogs_paths, dogs_labels = get_image_paths(dogs_dataset_path)
 
-faces_metrics = evaluate_model(faces_paths, faces_labels)
-print(f"Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {faces_metrics}")
+# faces_metrics = evaluate_model(faces_paths, faces_labels)
+# print(f"Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {faces_metrics}")
 
-art_metrics = evaluate_model(art_paths, art_labels)
-print(f"Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {art_metrics}")
+# art_metrics = evaluate_model(art_paths, art_labels)
+# print(f"Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {art_metrics}")
 
 dogs_metrics = evaluate_model(dogs_paths, dogs_labels)
 print(f"Dogs Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {dogs_metrics}")
