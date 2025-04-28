@@ -10,7 +10,7 @@ import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load model
-classifier = pipeline("image-classification", model="./sdxl-fine-tune-art", device=0 if torch.cuda.is_available() else -1)
+classifier = pipeline("image-classification", model="./sdxl-fine-tune-art_few_shot", device=0 if torch.cuda.is_available() else -1)
 
 # Load data
 art_dataset_path = 'archive/datasets/art_512x512'
@@ -43,7 +43,7 @@ def evaluate_model(image_paths, true_labels, batch_size=32):
             confidences.append(confidence)
             
             # adding this line because faces model is really bad at dogs
-            print(f"Image: {img_path} | Predicted Class: {pred_class} | Confidence: {confidence:.4f}")
+            # print(f"Image: {img_path} | Predicted Class: {pred_class} | Confidence: {confidence:.4f}")
     
     accuracy = accuracy_score(true_labels, preds)
     precision = precision_score(true_labels, preds)
@@ -53,15 +53,15 @@ def evaluate_model(image_paths, true_labels, batch_size=32):
     
     return accuracy, precision, recall, f1, auc
 
-# faces_paths, faces_labels = get_image_paths(faces_dataset_path)
-# art_paths, art_labels = get_image_paths(art_dataset_path)
+faces_paths, faces_labels = get_image_paths(faces_dataset_path)
+art_paths, art_labels = get_image_paths(art_dataset_path)
 dogs_paths, dogs_labels = get_image_paths(dogs_dataset_path)
 
-# faces_metrics = evaluate_model(faces_paths, faces_labels)
-# print(f"Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {faces_metrics}")
+faces_metrics = evaluate_model(faces_paths, faces_labels)
+print(f"Faces Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {faces_metrics}")
 
-# art_metrics = evaluate_model(art_paths, art_labels)
-# print(f"Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {art_metrics}")
+art_metrics = evaluate_model(art_paths, art_labels)
+print(f"Art Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {art_metrics}")
 
 dogs_metrics = evaluate_model(dogs_paths, dogs_labels)
 print(f"Dogs Dataset Metrics (Accuracy, Precision, Recall, F1, AUC): {dogs_metrics}")
