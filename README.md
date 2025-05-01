@@ -19,3 +19,12 @@ Finally, to test any model on a randomly augmented set of images, use the `rq2_t
 In `rq3_fewshot.ipynb`, head to the **Define Model and Data** section and choose the model to which you want to apply few-shot learning. In the same section, choose the dataset to use for the few-shot learning. Then, scroll to the **Create Few-Shot Set** section and find the line `few_shot_ds = create_few_shot_set(...)`. Here, you can change the set size, i.e. the number of images to do FSL with. Recall that a set size of 20 implies 10-shot learning. This is important if you want the results to match those of the thesis. Finally, you can change the number of epochs in the TrainingArguments() declaration under **Prepare Model For Training**.
 
 To test the models, use `rq3_testing.py` which works the same way as the previous testing scripts.
+
+### Datasets and Models 
+Albert5913 (2025). Ai generated dogs.jpg vs real dogs.jpg. https://www.kaggle.com/datasets/albertobircoci/ai-generated-dogs-jpg-vs-real-dogs-jpg
+AlDahoul, N. and Zaki, Y. Nyuad ai-generated images detector. https://huggingface.co/NYUAD-ComNets/NYUAD_AI-generated_images_detector
+Kannan, K. (2023). Ai and human art classification. https://www.kaggle.com/datasets/kausthubkannan/ai-and-human-art-classification
+Nahrawy (2023). Ai or not. https://huggingface.co/Nahrawy/AIorNot
+Organika (2024). Sdxl detector. https://huggingface.co/Organika/sdxl-detector
+prithivMLmods (2023). Deepfake real class siglip2. https://huggingface.co/prithivMLmods/Deepfake-Real-Class-Siglip2
+VM7608 (2024). Real vs ai generated faces dataset. https://www.kaggle.com/datasets/philosopher0808/real-vs-ai-generated-faces-dataset.
