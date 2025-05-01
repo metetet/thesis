@@ -21,10 +21,10 @@ In `rq3_fewshot.ipynb`, head to the **Define Model and Data** section and choose
 To test the models, use `rq3_testing.py` which works the same way as the previous testing scripts.
 
 ### Datasets and Models 
-Albert5913 (2025). Ai generated dogs.jpg vs real dogs.jpg. https://www.kaggle.com/datasets/albertobircoci/ai-generated-dogs-jpg-vs-real-dogs-jpg
-AlDahoul, N. and Zaki, Y. Nyuad ai-generated images detector. https://huggingface.co/NYUAD-ComNets/NYUAD_AI-generated_images_detector
-Kannan, K. (2023). Ai and human art classification. https://www.kaggle.com/datasets/kausthubkannan/ai-and-human-art-classification
-Nahrawy (2023). Ai or not. https://huggingface.co/Nahrawy/AIorNot
-Organika (2024). Sdxl detector. https://huggingface.co/Organika/sdxl-detector
-prithivMLmods (2023). Deepfake real class siglip2. https://huggingface.co/prithivMLmods/Deepfake-Real-Class-Siglip2
-VM7608 (2024). Real vs ai generated faces dataset. https://www.kaggle.com/datasets/philosopher0808/real-vs-ai-generated-faces-dataset.
+Albert5913 (2025). Ai generated dogs.jpg vs real dogs.jpg. https://www.kaggle.com/datasets/albertobircoci/ai-generated-dogs-jpg-vs-real-dogs-jpg <br/>
+AlDahoul, N. and Zaki, Y. Nyuad ai-generated images detector. https://huggingface.co/NYUAD-ComNets/NYUAD_AI-generated_images_detector <br/>
+Kannan, K. (2023). Ai and human art classification. https://www.kaggle.com/datasets/kausthubkannan/ai-and-human-art-classification <br/>
+Nahrawy (2023). Ai or not. https://huggingface.co/Nahrawy/AIorNot <br/>
+Organika (2024). Sdxl detector. https://huggingface.co/Organika/sdxl-detector <br/>
+prithivMLmods (2023). Deepfake real class siglip2. https://huggingface.co/prithivMLmods/Deepfake-Real-Class-Siglip2 <br/>
+VM7608 (2024). Real vs ai generated faces dataset. https://www.kaggle.com/datasets/philosopher0808/real-vs-ai-generated-faces-dataset. <br/>
