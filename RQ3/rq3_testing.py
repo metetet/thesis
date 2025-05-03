@@ -10,7 +10,7 @@ import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load model
-classifier = pipeline("image-classification", model="./sdxl-fine-tune-art_few_shot_few_shot", device=0 if torch.cuda.is_available() else -1)
+classifier = pipeline("image-classification", model="./sdxl-fine-tune-art_few_shot", device=0 if torch.cuda.is_available() else -1)
 
 # Load data
 art_dataset_path = 'archive/datasets/art_512x512'
