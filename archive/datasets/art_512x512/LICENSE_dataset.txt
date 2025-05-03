@@ -1,0 +1,21 @@
+This dataset is a reduced and modified version of the original dataset 'AI and Human Art Classification', which is licensed under the Open Database License (ODbL) v1.0.
+
+As required by the ODbL, this reduced version is also made available under the ODbL v1.0 license.
+
+You are free to:
+- Share: copy, distribute and use the database.
+- Create: produce works from the database.
+- Adapt: modify, transform and build upon the database.
+
+As long as you:
+- Attribute: You must attribute the original source (see below).
+- Share-Alike: If you publicly use or redistribute this version, you must also do so under ODbL v1.0.
+- Keep Open: You may not apply legal terms or technological measures that restrict others from doing anything the license permits.
+
+Original dataset: AI and Human Art Classification (https://www.kaggle.com/datasets/kausthubkannan/ai-and-human-art-classification)
+
+Full license text: https://opendatacommons.org/licenses/odbl/1-0/
+
+---
+
+This dataset has been reduced in size and/or modified for research purposes as part of a thesis project.

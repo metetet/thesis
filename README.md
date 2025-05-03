@@ -1,5 +1,5 @@
 # UM DSAI Bachelor's Thesis (2025)
-### Accompanying Code
+## Accompanying Code
  
 This repository provides the code and the necessary datasets to run the experiments conducted for the Maastricht University Data Science and Artificial Intelligence Bachelor's mandatory thesis component. 
 
@@ -20,7 +20,7 @@ In `rq3_fewshot.ipynb`, head to the **Define Model and Data** section and choose
 
 To test the models, use `rq3_testing.py` which works the same way as the previous testing scripts.
 
-### Datasets and Models 
+## Datasets and Models 
 Albert5913 (2025). Ai generated dogs.jpg vs real dogs.jpg. https://www.kaggle.com/datasets/albertobircoci/ai-generated-dogs-jpg-vs-real-dogs-jpg <br/>
 AlDahoul, N. and Zaki, Y. Nyuad ai-generated images detector. https://huggingface.co/NYUAD-ComNets/NYUAD_AI-generated_images_detector <br/>
 Kannan, K. (2023). Ai and human art classification. https://www.kaggle.com/datasets/kausthubkannan/ai-and-human-art-classification <br/>
@@ -28,3 +28,30 @@ Nahrawy (2023). Ai or not. https://huggingface.co/Nahrawy/AIorNot <br/>
 Organika (2024). Sdxl detector. https://huggingface.co/Organika/sdxl-detector <br/>
 prithivMLmods (2023). Deepfake real class siglip2. https://huggingface.co/prithivMLmods/Deepfake-Real-Class-Siglip2 <br/>
 VM7608 (2024). Real vs ai generated faces dataset. https://www.kaggle.com/datasets/philosopher0808/real-vs-ai-generated-faces-dataset. <br/>
+
+## Licensing
+
+📂 Faces Dataset: Reduced Version of [Real vs AI Generated Faces Dataset](https://www.kaggle.com/datasets/philosopher0808/real-vs-ai-generated-faces-dataset/data)
+
+This is a reduced version of the *Real vs AI Generated Faces Dataset*, originally created by Mark Otto and Andrew Fong.  
+The original dataset is licensed under the MIT License.
+
+Redistribution of this modified version is permitted under the same license.  
+See `faces_512x512/LICENSE_dataset.txt` for the full license terms.
+
+📂 Dogs Dataset: Reduced Version of [Ai Generated Dogs.jpg VS Real Dogs.jpg](https://www.kaggle.com/datasets/albertobircoci/ai-generated-dogs-jpg-vs-real-dogs-jpg)
+
+This dataset is based on a public domain dataset released under the [CC0 1.0 Universal (Public Domain Dedication)](https://creativecommons.org/publicdomain/zero/1.0/).
+
+You are free to copy, modify, and redistribute this data for any purpose, including commercial use, without asking for permission.
+
+Note: This does not imply any affiliation with or endorsement by the original creators.
+
+📂 Art Dataset: Reduced version of [AI and Human Art Classification](https://www.kaggle.com/datasets/kausthubkannan/ai-and-human-art-classification)
+
+This dataset is a reduced version of the original, which is licensed under the Open Database License (ODbL) v1.0.  
+
+Accordingly, this reduced version is also released under the same license.  
+
+See `art_512x512/LICENSE_dataset.txt` for full terms.
+
