@@ -31,7 +31,7 @@ VM7608 (2024). Real vs ai generated faces dataset. https://www.kaggle.com/datase
 
 ## Licensing
 
-📂 Faces Dataset: Reduced Version of [Real vs AI Generated Faces Dataset](https://www.kaggle.com/datasets/philosopher0808/real-vs-ai-generated-faces-dataset/data)
+**📂 Faces Dataset: Reduced Version of [Real vs AI Generated Faces Dataset](https://www.kaggle.com/datasets/philosopher0808/real-vs-ai-generated-faces-dataset/data)**
 
 This is a reduced version of the *Real vs AI Generated Faces Dataset*, originally created by Mark Otto and Andrew Fong.  
 The original dataset is licensed under the MIT License.
@@ -39,7 +39,7 @@ The original dataset is licensed under the MIT License.
 Redistribution of this modified version is permitted under the same license.  
 See `faces_512x512/LICENSE_dataset.txt` for the full license terms.
 
-📂 Dogs Dataset: Reduced Version of [Ai Generated Dogs.jpg VS Real Dogs.jpg](https://www.kaggle.com/datasets/albertobircoci/ai-generated-dogs-jpg-vs-real-dogs-jpg)
+**📂 Dogs Dataset: Reduced Version of [Ai Generated Dogs.jpg VS Real Dogs.jpg](https://www.kaggle.com/datasets/albertobircoci/ai-generated-dogs-jpg-vs-real-dogs-jpg)**
 
 This dataset is based on a public domain dataset released under the [CC0 1.0 Universal (Public Domain Dedication)](https://creativecommons.org/publicdomain/zero/1.0/).
 
@@ -47,7 +47,7 @@ You are free to copy, modify, and redistribute this data for any purpose, includ
 
 Note: This does not imply any affiliation with or endorsement by the original creators.
 
-📂 Art Dataset: Reduced version of [AI and Human Art Classification](https://www.kaggle.com/datasets/kausthubkannan/ai-and-human-art-classification)
+**📂 Art Dataset: Reduced version of [AI and Human Art Classification](https://www.kaggle.com/datasets/kausthubkannan/ai-and-human-art-classification)**
 
 This dataset is a reduced version of the original, which is licensed under the Open Database License (ODbL) v1.0.  
 
